@@ -13,7 +13,7 @@ namespace Demo.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            RegisterAppStart<FirstViewModel>();
+            RegisterAppStart<HomeViewModel>();
         }
     }
 }

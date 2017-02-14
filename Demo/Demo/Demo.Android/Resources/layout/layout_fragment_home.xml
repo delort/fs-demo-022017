@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:fitsSystemWindows="true">
+
+  <Button
+    android:id="@+id/button_vector"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:text="@string/button_vector" />
+
+  <Button
+    android:id="@+id/button_memory"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_vector"
+    android:text="@string/button_memory" />
+
+</RelativeLayout>

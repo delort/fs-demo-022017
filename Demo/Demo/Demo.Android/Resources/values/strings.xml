@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="button_forward">GO FORWARD</string>
-    <string name="button_back">GO BACK</string>
-    <string name="toolbar_text">Toolbar Title</string>
+  <string name="button_posts">View Posts</string>
+  <string name="button_vector">View Vector</string>
+  <string name="button_memory">View Memory Demo</string>
+  <string name="toolbar_text">Demo</string>
+
+  <string name="desc_vector">Vector</string>
 </resources>

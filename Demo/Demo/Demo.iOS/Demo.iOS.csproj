@@ -213,8 +213,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\BaseViewController.cs" />
-    <Compile Include="Views\FirstViewController.cs" />
-    <Compile Include="Views\SecondViewController.cs" />
+    <Compile Include="Views\HomeViewController.cs" />
     <BundleResource Include="Resources\Icon@2x.png" />
     <BundleResource Include="Resources\Icon-60@2x.png" />
     <BundleResource Include="Resources\Icon-72.png" />

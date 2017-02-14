@@ -5,10 +5,10 @@ using Demo.Core.ViewModels;
 
 namespace Demo.iOS.Views
 {
-    public class FirstViewController : BaseViewController<FirstViewModel>
+    public class HomeViewController : BaseViewController<HomeViewModel>
     {
         UIButton _goForwardButton;
-        MvxFluentBindingDescriptionSet<FirstViewController, FirstViewModel> _bindingSet;
+        MvxFluentBindingDescriptionSet<HomeViewController, HomeViewModel> _bindingSet;
 
         public override void ViewDidLoad()
         {
@@ -41,9 +41,7 @@ namespace Demo.iOS.Views
 
         void Bind()
         {
-            _bindingSet = this.CreateBindingSet<FirstViewController, FirstViewModel>();
-
-            _bindingSet.Bind(_goForwardButton).To(vm => vm.GoForwardCommand);
+            _bindingSet = this.CreateBindingSet<HomeViewController, HomeViewModel>();
 
             _bindingSet.Apply();
         }

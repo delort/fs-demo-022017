@@ -1,3 +1,4 @@
 ﻿<resources>
-  <dimen name="Example">1dp</dimen>
+  <dimen name="sidePadding">16dp</dimen>
+  <dimen name="contentPadding">8dp</dimen>
 </resources>
