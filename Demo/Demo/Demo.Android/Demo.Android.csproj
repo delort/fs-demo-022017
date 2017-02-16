@@ -191,7 +191,7 @@
     <Compile Include="Views\Activities\SplashActivity.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
-    <Compile Include="Views\Fragments\MemoryDemoFragment.cs" />
+    <Compile Include="Views\Fragments\RasterFragment.cs" />
     <Compile Include="Views\Fragments\VectorFragment.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -245,13 +245,16 @@
     <Analyzer Include="..\..\packages\MvvmCross.CodeAnalysis.4.4.0\analyzers\dotnet\cs\MvvmCrossCodeAnalysis.dll" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\layout_fragment_memory.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\android.xml" />
+    <AndroidResource Include="Resources\drawable\android_vector.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\layout_fragment_vector.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\android_raster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\layout_fragment_raster.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.24.2.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

@@ -14,14 +14,16 @@ namespace Demo.Android.Views
     public class HomeFragment : BaseFragment<HomeViewModel>
     {
         protected override int FragmentLayoutId => Resource.Layout.layout_fragment_home;
-        Button _vectorButton, _memoryButton;
+        protected override string ToolbarText => Resources.GetString(Resource.String.toolbar_home);
+
+        Button _vectorButton, _rasterButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             
             _vectorButton = view.FindViewById<Button>(Resource.Id.button_vector);
-            _memoryButton = view.FindViewById<Button>(Resource.Id.button_memory);
+            _rasterButton = view.FindViewById<Button>(Resource.Id.button_raster);
 
             Bind();
 
@@ -33,7 +35,7 @@ namespace Demo.Android.Views
             var bindingSet = this.CreateBindingSet<HomeFragment, HomeViewModel>();
             
             bindingSet.Bind(_vectorButton).To(vm => vm.VectorCommand);
-            bindingSet.Bind(_memoryButton).To(vm => vm.MemoryCommand);
+            bindingSet.Bind(_rasterButton).To(vm => vm.RasterCommand);
 
             bindingSet.Apply();
         }

@@ -14,12 +14,12 @@
     android:text="@string/button_vector" />
 
   <Button
-    android:id="@+id/button_memory"
+    android:id="@+id/button_raster"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
     android:layout_centerHorizontal="true"
     android:layout_below="@id/button_vector"
-    android:text="@string/button_memory" />
+    android:text="@string/button_raster" />
 
 </RelativeLayout>

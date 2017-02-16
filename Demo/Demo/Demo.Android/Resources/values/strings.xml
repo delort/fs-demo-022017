@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+  <!-- Toolbar text -->
+  <string name="toolbar_home">Demo</string>
+  <string name="toolbar_vector">Vector</string>
+  <string name="toolbar_raster">Raster</string>
+  
   <string name="button_posts">View Posts</string>
-  <string name="button_vector">View Vector</string>
-  <string name="button_memory">View Memory Demo</string>
+  <string name="button_vector">View Vector Image</string>
+  <string name="button_raster">View Raster Image</string>
   <string name="toolbar_text">Demo</string>
-
-  <string name="desc_vector">Vector</string>
 </resources>

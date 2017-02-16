@@ -2,11 +2,11 @@
 
 namespace Demo.Core.ViewModels
 {
-    public class MemoryDemoViewModel : MvxViewModel
+    public class RasterViewModel : MvxViewModel
     {
         #region Bindable Properties
 
-        int _size = 100;
+        int _size = 300;
         public int Size
         {
             get { return _size; }

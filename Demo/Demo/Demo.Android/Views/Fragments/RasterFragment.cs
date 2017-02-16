@@ -1,4 +1,4 @@
-using Android.OS;
+﻿using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
@@ -12,20 +12,20 @@ using Android.Graphics;
 namespace Demo.Android.Views
 {
     [MvxFragment(typeof(MainContainerViewModel), Resource.Id.content_frame, true)]
-    [Register(nameof(VectorFragment))]
-    public class VectorFragment : BaseFragment<VectorViewModel>
+    [Register(nameof(RasterFragment))]
+    public class RasterFragment : BaseFragment<RasterViewModel>
     {
-        protected override int FragmentLayoutId => Resource.Layout.layout_fragment_vector;
-        protected override string ToolbarText => Resources.GetString(Resource.String.toolbar_vector);
+        protected override int FragmentLayoutId => Resource.Layout.layout_fragment_raster;
+        protected override string ToolbarText => Resources.GetString(Resource.String.toolbar_raster);
 
-        ImageView _vectorImage;
+        ImageView _rasterImage;
         SeekBar _sizeSeekBar;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var view = base.OnCreateView(inflater, container, savedInstanceState);
 
-            _vectorImage = view.FindViewById<ImageView>(Resource.Id.vector_image_view);
+            _rasterImage = view.FindViewById<ImageView>(Resource.Id.raster_image_view);
             _sizeSeekBar = view.FindViewById<SeekBar>(Resource.Id.size_seek_bar);
 
             var screenWidth = Resources.DisplayMetrics.WidthPixels;
@@ -38,9 +38,9 @@ namespace Demo.Android.Views
 
         void Bind()
         {
-            var bindingSet = this.CreateBindingSet<VectorFragment, VectorViewModel>();
+            var bindingSet = this.CreateBindingSet<RasterFragment, RasterViewModel>();
 
-            bindingSet.Bind(_vectorImage).For(AndroidConstants.SIZE_TARGET_BINDING_KEY).To(vm => vm.Size);
+            bindingSet.Bind(_rasterImage).For(AndroidConstants.SIZE_TARGET_BINDING_KEY).To(vm => vm.Size);
             bindingSet.Bind(_sizeSeekBar).To(vm => vm.Size);
 
             bindingSet.Apply();

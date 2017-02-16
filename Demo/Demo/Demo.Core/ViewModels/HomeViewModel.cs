@@ -11,9 +11,9 @@ namespace Demo.Core.ViewModels
         public IMvxCommand VectorCommand =>
             _vectorCommand ?? (_vectorCommand = new MvxCommand(GoToVector));
 
-        IMvxCommand _memoryCommand;
-        public IMvxCommand MemoryCommand =>
-            _memoryCommand ?? (_memoryCommand = new MvxCommand(GoToMemory));
+        IMvxCommand _rasterCommand;
+        public IMvxCommand RasterCommand =>
+            _rasterCommand ?? (_rasterCommand = new MvxCommand(GoToRaster));
 
         #endregion
 
@@ -21,7 +21,7 @@ namespace Demo.Core.ViewModels
 
         void GoToVector() => ShowViewModel<VectorViewModel>();
 
-        void GoToMemory() => ShowViewModel<MemoryDemoViewModel>();
+        void GoToRaster() => ShowViewModel<RasterViewModel>();
 
         #endregion
 
