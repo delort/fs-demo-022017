@@ -11,33 +11,34 @@
     app:srcCompat="@drawable/android_raster"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/contentPadding"
-    android:layout_marginBottom="@dimen/contentPadding"
-    android:layout_marginLeft="@dimen/sidePadding"
-    android:layout_marginRight="@dimen/sidePadding"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true" />
+    android:layout_marginTop="@dimen/content_padding"
+    android:layout_marginBottom="@dimen/content_padding"
+    android:layout_marginLeft="@dimen/side_padding"
+    android:layout_marginRight="@dimen/side_padding"
+    android:layout_centerHorizontal="true" />
 
   <SeekBar
     android:id="@+id/size_seek_bar"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_alignParentBottom="true"
-    android:layout_marginTop="@dimen/contentPadding"
-    android:layout_marginBottom="@dimen/contentPadding"
-    android:layout_marginLeft="@dimen/sidePadding"
-    android:layout_marginRight="@dimen/sidePadding"
+    android:layout_marginTop="@dimen/content_padding"
+    android:layout_marginBottom="@dimen/content_padding"
+    android:layout_marginLeft="@dimen/side_padding"
+    android:layout_marginRight="@dimen/side_padding"
     android:maxHeight="2dp" />
 
   <TextView
-    android:id="@+id/textview_memory_usage"
+    android:id="@+id/textview_motivation"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_above="@id/size_seek_bar"
     android:layout_centerHorizontal="true"
-    android:layout_marginTop="@dimen/contentPadding"
-    android:layout_marginBottom="@dimen/contentPadding"
-    android:layout_marginLeft="@dimen/sidePadding"
-    android:layout_marginRight="@dimen/sidePadding" />
+    android:layout_marginTop="@dimen/content_padding"
+    android:layout_marginBottom="@dimen/content_padding"
+    android:layout_marginLeft="@dimen/side_padding"
+    android:layout_marginRight="@dimen/side_padding"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:text="@string/raster_motivation"/>
 
 </RelativeLayout>

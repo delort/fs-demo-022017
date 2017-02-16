@@ -7,7 +7,6 @@ using MvvmCross.Droid.Shared.Attributes;
 using MvvmCross.Droid.Support.V4;
 using Demo.Android.Helpers;
 using Demo.Core.ViewModels;
-using Android.Graphics;
 
 namespace Demo.Android.Views
 {
@@ -29,7 +28,7 @@ namespace Demo.Android.Views
             _sizeSeekBar = view.FindViewById<SeekBar>(Resource.Id.size_seek_bar);
 
             var screenWidth = Resources.DisplayMetrics.WidthPixels;
-            _sizeSeekBar.Max = screenWidth - (int)(Resources.GetDimension(Resource.Dimension.sidePadding) * 2);
+            _sizeSeekBar.Max = screenWidth - (int)(Resources.GetDimension(Resource.Dimension.side_padding) * 2);
 
             Bind();
 
