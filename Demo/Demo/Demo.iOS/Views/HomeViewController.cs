@@ -10,7 +10,7 @@ namespace Demo.iOS.Views
     {
         public override string Title => iOSConstants.VIEW_CONTROLLER_HOME_TITLE;
 
-        UIButton _goToVectorButton;
+        UIButton _goToVectorButton, _goToDelegateFunctionsButton;
         MvxFluentBindingDescriptionSet<HomeViewController, HomeViewModel> _bindingSet;
 
         public override void ViewDidLoad()
@@ -29,7 +29,10 @@ namespace Demo.iOS.Views
             _goToVectorButton = new UIButton(UIButtonType.RoundedRect);
             _goToVectorButton.SetTitle(iOSConstants.BUTTON_VECTOR, UIControlState.Normal);
 
-            View.AddSubviews(_goToVectorButton);
+            _goToDelegateFunctionsButton = new UIButton(UIButtonType.RoundedRect);
+            _goToDelegateFunctionsButton.SetTitle(iOSConstants.BUTTON_DELEGATE_FUNCTIONS, UIControlState.Normal);
+
+            View.AddSubviews(_goToVectorButton, _goToDelegateFunctionsButton);
         }
 
         void LayoutViewElements()
@@ -37,7 +40,10 @@ namespace Demo.iOS.Views
             View.AddConstraints(new FluentLayout[]
             {
                 _goToVectorButton.AtTopOf(View, iOSConstants.CONTENT_PADDING),
-                _goToVectorButton.WithSameCenterX(View)
+                _goToVectorButton.WithSameCenterX(View),
+
+                _goToDelegateFunctionsButton.Below(_goToVectorButton, iOSConstants.CONTENT_PADDING),
+                _goToDelegateFunctionsButton.WithSameCenterX(View)
             });
         }
 
@@ -46,6 +52,7 @@ namespace Demo.iOS.Views
             _bindingSet = this.CreateBindingSet<HomeViewController, HomeViewModel>();
 
             _bindingSet.Bind(_goToVectorButton).To(vm => vm.VectorCommand);
+            _bindingSet.Bind(_goToDelegateFunctionsButton).To(vm => vm.DelegateFunctionsCommand);
 
             _bindingSet.Apply();
         }
