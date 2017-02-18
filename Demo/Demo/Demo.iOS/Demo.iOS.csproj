@@ -207,9 +207,10 @@
     <MtouchExtraArgs>-linkskip=Demo.Core</MtouchExtraArgs>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Binding\ViewSizeTargetBinding.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Helpers\iOSConstants.cs" />
-    <Compile Include="LinkerPleaseInclude.cs" />
+    <Compile Include="Linker\LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
@@ -235,7 +236,6 @@
     <BundleResource Include="Resources\Default-Portrait@2x.png" />
     <BundleResource Include="Resources\Default-Landscape@2x.png" />
     <BundleResource Include="Resources\Default-Landscape.png" />
-    <Compile Include="Views\RasterViewController.cs" />
     <Compile Include="Views\VectorViewController.cs" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
@@ -309,6 +309,20 @@
     <Analyzer Include="..\..\packages\MvvmCross.CodeAnalysis.4.4.0\analyzers\dotnet\cs\MvvmCross.Core.dll" />
     <Analyzer Include="..\..\packages\MvvmCross.CodeAnalysis.4.4.0\analyzers\dotnet\cs\MvvmCross.Platform.dll" />
     <Analyzer Include="..\..\packages\MvvmCross.CodeAnalysis.4.4.0\analyzers\dotnet\cs\MvvmCrossCodeAnalysis.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Resources\Media.xcassets\AppIcons.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\LaunchImages.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Vectors.imageset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Media.xcassets\Vectors.imageset\vector.pdf">
+      <InProject>false</InProject>
+    </ImageAsset>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

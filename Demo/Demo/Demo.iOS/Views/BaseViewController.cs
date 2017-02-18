@@ -1,4 +1,5 @@
 using Cirrious.FluentLayouts.Touch;
+using Demo.iOS.Helpers;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
 using UIKit;
@@ -22,7 +23,7 @@ namespace Demo.iOS.Views
             NavigationController.NavigationBar.BarStyle = UIBarStyle.Black;
             NavigationController.NavigationBar.Translucent = false;
             NavigationController.NavigationBar.Hidden = false;
-            NavigationController.NavigationBar.BarTintColor = UIColor.FromRGB(38, 50, 56);
+            NavigationController.NavigationBar.BarTintColor = iOSConstants.DEMO_COLOR;
             NavigationController.NavigationBar.TintColor = UIColor.White;
 
             NavigationController.SetNeedsStatusBarAppearanceUpdate();

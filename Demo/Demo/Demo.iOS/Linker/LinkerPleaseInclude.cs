@@ -3,10 +3,11 @@ using System.ComponentModel;
 using System.Windows.Input;
 using Foundation;
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Target;
 using MvvmCross.Platform.IoC;
 using UIKit;
 
-namespace Demo.iOS
+namespace Demo.iOS.Linker
 {
     // LinkerPleaseInclude is never actually executed, but when Xamarin linking is enabled it ensures types and properties are preserved in the deployed app
     // Included are some examples of types and properties you may need preserved in a linked version of your app
@@ -91,6 +92,11 @@ namespace Demo.iOS
         public void Include(MvxTaskBasedBindingContext context)
         {
             context = new MvxTaskBasedBindingContext();
+        }
+
+        public void Include(MvxUISliderValueTargetBinding binding)
+        {
+            binding = new MvxUISliderValueTargetBinding(null, null);
         }
     }
 }
