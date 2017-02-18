@@ -208,6 +208,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Helpers\iOSConstants.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -234,6 +235,8 @@
     <BundleResource Include="Resources\Default-Portrait@2x.png" />
     <BundleResource Include="Resources\Default-Landscape@2x.png" />
     <BundleResource Include="Resources\Default-Landscape.png" />
+    <Compile Include="Views\RasterViewController.cs" />
+    <Compile Include="Views\VectorViewController.cs" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>

@@ -2,19 +2,20 @@
 using MvvmCross.Binding.BindingContext;
 using UIKit;
 using Demo.Core.ViewModels;
+using Demo.iOS.Helpers;
 
 namespace Demo.iOS.Views
 {
     public class HomeViewController : BaseViewController<HomeViewModel>
     {
-        UIButton _goForwardButton;
+        public override string Title => iOSConstants.VIEW_CONTROLLER_HOME_TITLE;
+
+        UIButton _goToVectorButton, _goToRasterButton;
         MvxFluentBindingDescriptionSet<HomeViewController, HomeViewModel> _bindingSet;
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-
-            Title = "First View";
 
             CreateViewElements();
 
@@ -25,23 +26,33 @@ namespace Demo.iOS.Views
 
         void CreateViewElements()
         {
-            _goForwardButton = new UIButton(UIButtonType.RoundedRect);
-            _goForwardButton.SetTitle("Go Forward", UIControlState.Normal);
-            Add(_goForwardButton);
+            _goToVectorButton = new UIButton(UIButtonType.RoundedRect);
+            _goToVectorButton.SetTitle(iOSConstants.BUTTON_VECTOR, UIControlState.Normal);
+
+            _goToRasterButton = new UIButton(UIButtonType.RoundedRect);
+            _goToRasterButton.SetTitle(iOSConstants.BUTTON_RASTER, UIControlState.Normal);
+
+            View.AddSubviews(_goToVectorButton, _goToRasterButton);
         }
 
         void LayoutViewElements()
         {
             View.AddConstraints(new FluentLayout[]
             {
-                _goForwardButton.AtTopOf(View, 12f),
-                _goForwardButton.WithSameCenterX(View)
+                _goToVectorButton.AtTopOf(View, 12f),
+                _goToVectorButton.WithSameCenterX(View),
+
+                _goToRasterButton.Below(_goToVectorButton, 12f),
+                _goToRasterButton.WithSameCenterX(View)
             });
         }
 
         void Bind()
         {
             _bindingSet = this.CreateBindingSet<HomeViewController, HomeViewModel>();
+
+            _bindingSet.Bind(_goToVectorButton).To(vm => vm.VectorCommand);
+            _bindingSet.Bind(_goToRasterButton).To(vm => vm.RasterCommand);
 
             _bindingSet.Apply();
         }

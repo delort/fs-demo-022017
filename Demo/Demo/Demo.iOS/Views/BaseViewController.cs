@@ -8,6 +8,8 @@ namespace Demo.iOS.Views
     public abstract class BaseViewController<TViewModel> : MvxViewController<TViewModel>
         where TViewModel : class, IMvxViewModel
     {
+        public abstract override string Title { get; }
+
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
