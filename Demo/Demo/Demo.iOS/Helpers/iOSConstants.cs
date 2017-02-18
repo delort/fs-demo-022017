@@ -9,6 +9,10 @@ namespace Demo.iOS.Helpers
 
         public const string VIEW_CONTROLLER_HOME_TITLE = "Home";
         public const string VIEW_CONTROLLER_VECTOR_TITLE = "Vector";
+        public const string VIEW_CONTROLLER_DELEGATE_FUNCTIONS_TITLE = "Delegate Functions";
+        public const string VIEW_CONTROLLER_LOCALREF_FUNCTION_TITLE = "Local Ref Function";
+        public const string VIEW_CONTROLLER_EXTERNALREF_FUNCTION_TITLE = "External Ref Function";
+        public const string VIEW_CONTROLLER_SUBSCRIPTION_FUNCTION_TITLE = "Subscription Function";
 
         #endregion
 

@@ -1,8 +1,8 @@
 ﻿using Cirrious.FluentLayouts.Touch;
-using MvvmCross.Binding.BindingContext;
-using UIKit;
 using Demo.Core.ViewModels;
 using Demo.iOS.Helpers;
+using MvvmCross.Binding.BindingContext;
+using UIKit;
 
 namespace Demo.iOS.Views
 {

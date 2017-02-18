@@ -215,6 +215,10 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\BaseViewController.cs" />
+    <Compile Include="Views\Delegates\DelegateExternalReferenceViewController.cs" />
+    <Compile Include="Views\Delegates\DelegateFunctionsViewController.cs" />
+    <Compile Include="Views\Delegates\DelegateLocalReferenceViewController.cs" />
+    <Compile Include="Views\Delegates\DelegateSubscriptionViewController.cs" />
     <Compile Include="Views\HomeViewController.cs" />
     <BundleResource Include="Resources\Icon@2x.png" />
     <BundleResource Include="Resources\Icon-60@2x.png" />
@@ -236,7 +240,7 @@
     <BundleResource Include="Resources\Default-Portrait@2x.png" />
     <BundleResource Include="Resources\Default-Landscape@2x.png" />
     <BundleResource Include="Resources\Default-Landscape.png" />
-    <Compile Include="Views\VectorViewController.cs" />
+    <Compile Include="Views\Vectors\VectorViewController.cs" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
