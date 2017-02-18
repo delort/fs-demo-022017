@@ -2,7 +2,7 @@
 
 namespace Demo.Core.ViewModels
 {
-    public class HomeViewModel : MvxViewModel
+    public class HomeViewModel : BaseViewModel
     {
 
         #region Commands

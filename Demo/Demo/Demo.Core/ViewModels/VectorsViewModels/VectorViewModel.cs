@@ -1,8 +1,6 @@
-﻿using MvvmCross.Core.ViewModels;
-
-namespace Demo.Core.ViewModels
+﻿namespace Demo.Core.ViewModels
 {
-    public class RasterViewModel : MvxViewModel
+    public class VectorViewModel : BaseViewModel
     {
         #region Bindable Properties
 

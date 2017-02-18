@@ -2,7 +2,7 @@
 
 namespace Demo.Core.ViewModels
 {
-    public class DelegateFunctionsViewModel : MvxViewModel
+    public class DelegateFunctionsViewModel : BaseViewModel
     {
         #region Commands
 
