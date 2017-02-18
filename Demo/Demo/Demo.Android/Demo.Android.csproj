@@ -192,11 +192,11 @@
     <Compile Include="Setup.cs" />
     <Compile Include="Views\Activities\SplashActivity.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
-    <Compile Include="Views\Activities\DelegateExportActivity.cs" />
-    <Compile Include="Views\Activities\DelegateExternalReferenceActivity.cs" />
+    <Compile Include="Views\Activities\Delegates\DelegateExportActivity.cs" />
+    <Compile Include="Views\Activities\Delegates\DelegateExternalReferenceActivity.cs" />
     <Compile Include="Views\Fragments\DelegateFunctionsFragment.cs" />
-    <Compile Include="Views\Activities\DelegateLocalReferenceActivity.cs" />
-    <Compile Include="Views\Activities\DelegateSubscriptionActivity.cs" />
+    <Compile Include="Views\Activities\Delegates\DelegateLocalReferenceActivity.cs" />
+    <Compile Include="Views\Activities\Delegates\DelegateSubscriptionActivity.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
     <Compile Include="Views\Fragments\RasterFragment.cs" />
     <Compile Include="Views\Fragments\VectorFragment.cs" />
