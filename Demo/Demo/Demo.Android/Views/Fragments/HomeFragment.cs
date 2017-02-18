@@ -2,10 +2,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Demo.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Droid.Shared.Attributes;
 using MvvmCross.Droid.Support.V4;
-using Demo.Core.ViewModels;
 
 namespace Demo.Android.Views
 {
@@ -16,7 +16,7 @@ namespace Demo.Android.Views
         protected override int FragmentLayoutId => Resource.Layout.layout_fragment_home;
         protected override string ToolbarText => Resources.GetString(Resource.String.toolbar_home);
 
-        Button _vectorButton, _rasterButton;
+        Button _vectorButton, _rasterButton, _delegateFunctionsButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -24,6 +24,7 @@ namespace Demo.Android.Views
             
             _vectorButton = view.FindViewById<Button>(Resource.Id.button_vector);
             _rasterButton = view.FindViewById<Button>(Resource.Id.button_raster);
+            _delegateFunctionsButton = view.FindViewById<Button>(Resource.Id.button_delegate_fucntions);
 
             Bind();
 
@@ -36,6 +37,7 @@ namespace Demo.Android.Views
             
             bindingSet.Bind(_vectorButton).To(vm => vm.VectorCommand);
             bindingSet.Bind(_rasterButton).To(vm => vm.RasterCommand);
+            bindingSet.Bind(_delegateFunctionsButton).To(vm => vm.DelegateFunctionsCommand);
 
             bindingSet.Apply();
         }

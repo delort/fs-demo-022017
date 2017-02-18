@@ -35,6 +35,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="ViewModels\DelegateExportViewModel.cs" />
+    <Compile Include="ViewModels\DelegateExternalReferenceViewModel.cs" />
+    <Compile Include="ViewModels\DelegateFunctionsViewModel.cs" />
+    <Compile Include="ViewModels\DelegateLocalReferenceViewModel.cs" />
+    <Compile Include="ViewModels\DelegateSubscriptionViewModel.cs" />
     <Compile Include="ViewModels\RasterViewModel.cs" />
     <Compile Include="ViewModels\VectorViewModel.cs" />
     <Compile Include="ViewModels\MainContainerViewModel.cs" />

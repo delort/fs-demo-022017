@@ -15,13 +15,19 @@ namespace Demo.Core.ViewModels
         public IMvxCommand RasterCommand =>
             _rasterCommand ?? (_rasterCommand = new MvxCommand(GoToRaster));
 
+        IMvxCommand _delegateFunctionsCommand;
+        public IMvxCommand DelegateFunctionsCommand =>
+            _delegateFunctionsCommand ?? (_delegateFunctionsCommand = new MvxCommand(GoToDelegateFunctions));
+
         #endregion
 
-        #region Helpers
+        #region Navigation
 
         void GoToVector() => ShowViewModel<VectorViewModel>();
 
         void GoToRaster() => ShowViewModel<RasterViewModel>();
+
+        void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
 
         #endregion
 

@@ -9,7 +9,7 @@ namespace Demo.Android.Views
     [Activity(
         Theme = "@style/Demo.Android",
         WindowSoftInputMode = SoftInput.AdjustPan | SoftInput.StateHidden)]
-    public class MainActivity : BaseActivity<MainContainerViewModel>
+    public class MainActivity : BaseFragmentActivity<MainContainerViewModel>
     {
         protected override int ActivityLayoutId => Resource.Layout.layout_activity;
     }

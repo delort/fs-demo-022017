@@ -5,13 +5,14 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 
 namespace Demo.Android.Views
 {
-    public abstract class BaseActivity<TViewModel> : MvxAppCompatActivity<TViewModel>
+    public abstract class BaseFragmentActivity<TViewModel> : MvxCachingFragmentCompatActivity<TViewModel>
         where TViewModel : class, IMvxViewModel
     {
         protected abstract int ActivityLayoutId { get; }
-        protected abstract int TitleResourceId { get; }
 
-        protected Toolbar Toolbar => FindViewById<Toolbar>(Resource.Id.toolbar);
+        Toolbar _toolbar;
+        protected Toolbar Toolbar =>
+            FindViewById<Toolbar>(Resource.Id.toolbar);
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -19,9 +20,7 @@ namespace Demo.Android.Views
 
             SetContentView(ActivityLayoutId);
 
-            SetSupportActionBar(Toolbar);
-
-            Title = Resources.GetString(TitleResourceId);
+            SetSupportActionBar(_toolbar);
         }
     }
 }

@@ -4,10 +4,22 @@
   <string name="toolbar_home">Demo</string>
   <string name="toolbar_vector">Vector</string>
   <string name="toolbar_raster">Raster</string>
+  <string name="toolbar_delegate_functions">Delegate Functions</string>
+  <string name="toolbar_export_function">Export Function</string>
+  <string name="toolbar_localref_function">Local Ref Function</string>
+  <string name="toolbar_externalref_function">External Ref Function</string>
+  <string name="toolbar_subscription_function">Subscription Function</string>
   
   <string name="button_posts">View Posts</string>
   <string name="button_vector">View Vector Image</string>
   <string name="button_raster">View Raster Image</string>
+  <string name="button_close">Close</string>
+  <string name="button_message">View Message</string>
+  <string name="button_delegate_functions">View Delegate Functions</string>
+  <string name="button_export_function">View Export Function</string>
+  <string name="button_localref_function">View Local Ref Function</string>
+  <string name="button_externalref_function">View External Ref Function</string>
+  <string name="button_subscription_function">View Subscription Function</string>
 
   <string name="vector_motivation">As of API 23, Android natively supports vector drawables. The Android support libraries allow for the use of vector drawables as early as API 15. The vector being rendered above is a 2KB XML file, yet it scales to any size without losing fidelity.</string>
   <string name="raster_motivation">Raster (or bitmap) drawables do not scale well, and should ideally be rendered at the size at which they\'re provided. However, providing correctly dimensioned images for all Android DPIs can take up a lot of space. The raster being rendered above is 3KB - larger than the vector on the vector fragment.</string>

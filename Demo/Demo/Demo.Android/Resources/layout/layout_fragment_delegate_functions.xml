@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:fitsSystemWindows="true">
+
+  <Button
+    android:id="@+id/button_export_function"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:text="@string/button_export_function" />
+
+  <Button
+    android:id="@+id/button_localref_function"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_export_function"
+    android:text="@string/button_localref_function" />
+
+  <Button
+    android:id="@+id/button_externalref_function"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_localref_function"
+    android:text="@string/button_externalref_function" />
+  
+  <Button
+    android:id="@+id/button_subscription_function"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_externalref_function"
+    android:text="@string/button_subscription_function" />
+
+</RelativeLayout>
