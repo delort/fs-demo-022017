@@ -1,10 +1,13 @@
-using MvvmCross.iOS.Platform;
-using MvvmCross.Core.ViewModels;
-using UIKit;
 using Demo.Core;
-using MvvmCross.Binding.Bindings.Target.Construction;
-using Demo.iOS.Helpers;
 using Demo.iOS.Bindings;
+using Demo.iOS.Helpers;
+using Demo.Plugin.AlertDialog;
+using Demo.Plugin.AlertDialog.iOS;
+using MvvmCross.Binding.Bindings.Target.Construction;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.iOS.Platform;
+using MvvmCross.Platform;
+using UIKit;
 
 namespace Demo.iOS
 {
@@ -19,6 +22,14 @@ namespace Demo.iOS
         // CreateApp() is the only method for which an override is required in Setup, however there are many other methods that you will probably need or want to override
         // Learn more about using Setup to register custom bindings, platform services, and more at https://github.com/MvvmCross/MvvmCross/wiki/Customizing-using-App-and-Setup#setupcs
         protected override IMvxApplication CreateApp() => new App();
+
+        protected override void InitializeFirstChance()
+        {
+            base.InitializeFirstChance();
+
+            //! HACK [JF] :: need to figure out why iOS is not able to resolve the alert dialog
+            Mvx.RegisterSingleton<IMvxAlertDialog>(new MvxAlertDialog());
+        }
 
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {

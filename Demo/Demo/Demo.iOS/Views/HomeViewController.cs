@@ -11,7 +11,7 @@ namespace Demo.iOS.Views
         public override string Title => iOSConstants.VIEW_CONTROLLER_HOME_TITLE;
 
         MvxFluentBindingDescriptionSet<HomeViewController, HomeViewModel> _bindingSet;
-        UIButton _goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton;
+        UIButton _goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton;
 
         public override void ViewDidLoad()
         {
@@ -35,7 +35,10 @@ namespace Demo.iOS.Views
             _goToDelegateFunctionsButton = new UIButton(UIButtonType.RoundedRect);
             _goToDelegateFunctionsButton.SetTitle(iOSConstants.BUTTON_DELEGATE_FUNCTIONS, UIControlState.Normal);
 
-            View.AddSubviews(_goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton);
+            _showPluginAlertButton = new UIButton(UIButtonType.RoundedRect);
+            _showPluginAlertButton.SetTitle(iOSConstants.BUTTON_PLUGIN_ALERT, UIControlState.Normal);
+
+            View.AddSubviews(_goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton);
         }
 
         void LayoutViewElements()
@@ -49,7 +52,10 @@ namespace Demo.iOS.Views
                 _goToFluentLayoutButton.WithSameCenterX(View),
 
                 _goToDelegateFunctionsButton.Below(_goToFluentLayoutButton, iOSConstants.CONTENT_PADDING),
-                _goToDelegateFunctionsButton.WithSameCenterX(View)
+                _goToDelegateFunctionsButton.WithSameCenterX(View),
+
+                _showPluginAlertButton.Below(_goToDelegateFunctionsButton, iOSConstants.CONTENT_PADDING),
+                _showPluginAlertButton.WithSameCenterX(View)
             });
         }
 
@@ -60,6 +66,7 @@ namespace Demo.iOS.Views
             _bindingSet.Bind(_goToVectorButton).To(vm => vm.VectorCommand);
             _bindingSet.Bind(_goToFluentLayoutButton).To(vm => vm.FluentLayoutCommand);
             _bindingSet.Bind(_goToDelegateFunctionsButton).To(vm => vm.DelegateFunctionsCommand);
+            _bindingSet.Bind(_showPluginAlertButton).To(vm => vm.PluginAlertCommand);
 
             _bindingSet.Apply();
         }
