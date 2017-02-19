@@ -52,6 +52,10 @@
     <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Demo.Plugin.AlertDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Demo.Plugin.AlertDialog.1.0.0-beta1\lib\portable-net45+win+wpa81+wp80\Demo.Plugin.AlertDialog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="MvvmCross.Core, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\MvvmCross.Core.4.4.0\lib\portable-net45+win+wpa81+wp80\MvvmCross.Core.dll</HintPath>
       <Private>True</Private>

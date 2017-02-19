@@ -208,6 +208,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Binding\ViewSizeTargetBinding.cs" />
+    <Compile Include="Bootstrap\AlertDialogPluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Helpers\iOSConstants.cs" />
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
@@ -256,6 +257,14 @@
   <ItemGroup>
     <Reference Include="Cirrious.FluentLayouts.Touch, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Cirrious.FluentLayout.2.5.0\lib\Xamarin.iOS10\Cirrious.FluentLayouts.Touch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Demo.Plugin.AlertDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Demo.Plugin.AlertDialog.1.0.0-beta1\lib\Xamarin.iOS10\Demo.Plugin.AlertDialog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Demo.Plugin.AlertDialog.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Demo.Plugin.AlertDialog.1.0.0-beta1\lib\Xamarin.iOS10\Demo.Plugin.AlertDialog.iOS.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MvvmCross.Binding, Version=4.0.0.0, Culture=neutral, processorArchitecture=MSIL">
