@@ -31,4 +31,13 @@
     android:layout_below="@id/button_raster"
     android:text="@string/button_delegate_functions" />
 
+  <Button
+    android:id="@+id/button_plugin_alert"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/content_padding"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_delegate_fucntions"
+    android:text="@string/button_plugin_alert" />
+
 </RelativeLayout>

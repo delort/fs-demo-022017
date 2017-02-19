@@ -1,9 +1,17 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Demo.Plugin.AlertDialog;
+using MvvmCross.Core.ViewModels;
 
 namespace Demo.Core.ViewModels
 {
     public class HomeViewModel : BaseViewModel
     {
+
+        readonly IMvxAlertDialog _mvxAlertDialog;
+
+        public HomeViewModel(IMvxAlertDialog mvxAlertDialog)
+        {
+            _mvxAlertDialog = mvxAlertDialog;
+        }
 
         #region Commands
 
@@ -23,6 +31,10 @@ namespace Demo.Core.ViewModels
         public IMvxCommand DelegateFunctionsCommand =>
             _delegateFunctionsCommand ?? (_delegateFunctionsCommand = new MvxCommand(GoToDelegateFunctions));
 
+        IMvxCommand _pluginAlertCommand;
+        public IMvxCommand PluginAlertCommand =>
+            _pluginAlertCommand ?? (_pluginAlertCommand = new MvxCommand(ShowAlertDialog));
+
         #endregion
 
         #region Navigation
@@ -34,6 +46,15 @@ namespace Demo.Core.ViewModels
         void GoToFluentLayout() => ShowViewModel<FluentLayoutViewModel>();
 
         void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
+
+        #endregion
+
+        #region Command Execution
+
+        void ShowAlertDialog()
+        {
+            _mvxAlertDialog.ShowDialog(Constants.ALERT_MESSAGE, Constants.ALERT_TITLE, Constants.ALERT_BUTTON);
+        }
 
         #endregion
 

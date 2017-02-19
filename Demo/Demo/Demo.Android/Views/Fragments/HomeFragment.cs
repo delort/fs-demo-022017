@@ -16,7 +16,7 @@ namespace Demo.Android.Views
         protected override int FragmentLayoutId => Resource.Layout.layout_fragment_home;
         protected override string ToolbarText => Resources.GetString(Resource.String.toolbar_home);
 
-        Button _vectorButton, _rasterButton, _delegateFunctionsButton;
+        Button _vectorButton, _rasterButton, _delegateFunctionsButton, _pluginAlertButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -25,6 +25,7 @@ namespace Demo.Android.Views
             _vectorButton = view.FindViewById<Button>(Resource.Id.button_vector);
             _rasterButton = view.FindViewById<Button>(Resource.Id.button_raster);
             _delegateFunctionsButton = view.FindViewById<Button>(Resource.Id.button_delegate_fucntions);
+            _pluginAlertButton = view.FindViewById<Button>(Resource.Id.button_plugin_alert);
 
             Bind();
 
@@ -38,6 +39,7 @@ namespace Demo.Android.Views
             bindingSet.Bind(_vectorButton).To(vm => vm.VectorCommand);
             bindingSet.Bind(_rasterButton).To(vm => vm.RasterCommand);
             bindingSet.Bind(_delegateFunctionsButton).To(vm => vm.DelegateFunctionsCommand);
+            bindingSet.Bind(_pluginAlertButton).To(vm => vm.PluginAlertCommand);
 
             bindingSet.Apply();
         }
