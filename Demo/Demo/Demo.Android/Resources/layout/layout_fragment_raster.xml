@@ -8,7 +8,7 @@
 
   <ImageView
     android:id="@+id/raster_image_view"
-    app:srcCompat="@drawable/android_raster"
+    android:src="@drawable/android_raster"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/content_padding"

@@ -23,7 +23,7 @@
           android:onClick="button_OnClick"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginTop="8dp"
+          android:layout_marginTop="@dimen/content_padding"
           android:layout_centerHorizontal="true"
           android:text="@string/button_close" />
 
