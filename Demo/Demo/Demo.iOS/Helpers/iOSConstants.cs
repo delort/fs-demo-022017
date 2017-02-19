@@ -27,14 +27,15 @@ namespace Demo.iOS.Helpers
 
         public static nfloat CONTENT_PADDING = 12f;
         public static nfloat SIDE_PADDING = 12f;
+        public static nfloat INTERNAL_PADDING = 6f;
 
         #endregion
 
         #region FONT
 
         public const string FONT_HELVETICA_NEUE = "HelveticaNeue";
-        public static nfloat FONT_SMALL = 12f;
-        public static nfloat FONT_MEDIUM = 10f;
+        public static nfloat FONT_MEDIUM = 12f;
+        public static nfloat FONT_SMALL = 8f;
 
         #endregion
 

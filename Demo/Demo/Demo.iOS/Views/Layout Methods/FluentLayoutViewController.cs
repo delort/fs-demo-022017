@@ -36,15 +36,15 @@ namespace Demo.iOS.Views
             _bottomCentreView = CreateEmptyView(UIColor.Orange);
             _bottomRightView = CreateEmptyView(UIColor.Brown);
 
-            _topLeftLabel = CreateLabel("Top Left", UIColor.Black);
-            _topCentreLabel = CreateLabel("Top Centre", UIColor.White);
-            _topRightLabel = CreateLabel("Top Right", UIColor.White);
-            _middleLeftLabel = CreateLabel("Middle Left", UIColor.White);
-            _middleCentreLabel = CreateLabel("Middle Centre", UIColor.White);
-            _middleRightLabel = CreateLabel("Middle Right", UIColor.Black);
-            _bottomLeftLabel = CreateLabel("Bottom Left", UIColor.Black);
-            _bottomCentreLabel = CreateLabel("Bottom Centre", UIColor.Black);
-            _bottomRightLabel = CreateLabel("Bottom Right", UIColor.White);
+            _topLeftLabel = CreateLabel("Height and width relative to superview", UIColor.Black);
+            _topCentreLabel = CreateLabel("Height and width relative to superview", UIColor.White);
+            _topRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.White);
+            _middleLeftLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.White);
+            _middleCentreLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.White);
+            _middleRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.Black);
+            _bottomLeftLabel = CreateLabel("Height and width relative to superview", UIColor.Black);
+            _bottomCentreLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.Black);
+            _bottomRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.White);
 
             _topLeftView.Add(_topLeftLabel);
             _topCentreView.Add(_topCentreLabel);
@@ -59,8 +59,11 @@ namespace Demo.iOS.Views
             View.AddSubviews(_topLeftView, _topCentreView, _topRightView, _middleLeftView, _middleCentreView, _middleRightView, _bottomLeftView, _bottomCentreView, _bottomRightView);
         }
 
-        void LayoutViewElements()
+        public override void ViewDidLayoutSubviews()
         {
+            base.ViewDidLayoutSubviews();
+
+            // These constraints rely on other constraints having previously been applied, so we use ViewDidLayoutSubviews()
             AddCenterInsideConstraints(_topLeftView, _topLeftLabel);
             AddCenterInsideConstraints(_topCentreView, _topCentreLabel);
             AddCenterInsideConstraints(_topRightView, _topRightLabel);
@@ -70,53 +73,62 @@ namespace Demo.iOS.Views
             AddCenterInsideConstraints(_bottomLeftView, _bottomLeftLabel);
             AddCenterInsideConstraints(_bottomCentreView, _bottomCentreLabel);
             AddCenterInsideConstraints(_bottomRightView, _bottomRightLabel);
+        }
+
+        void LayoutViewElements()
+        {
+            var oneThirdMultiplier = 1f / 3f;
+            var halfContentPadding = iOSConstants.CONTENT_PADDING / 2f;
+            var halfSidePadding = iOSConstants.SIDE_PADDING / 2f;
 
             View.AddConstraints(new FluentLayout[]
             {
-                _topLeftView.AtTopOf(View),
-                _topLeftView.AtLeftOf(View),
-                _topLeftView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _topLeftView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _topLeftView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
+                _topLeftView.AtLeftOf(View, iOSConstants.SIDE_PADDING),
+                _topLeftView.WithSameHeight(View).WithMultiplier(0.5f).Minus(iOSConstants.CONTENT_PADDING),
+                _topLeftView.WithSameWidth(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.SIDE_PADDING),
 
-                _topCentreView.AtTopOf(View),
-                _topCentreView.ToRightOf(_topLeftView),
-                _topCentreView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _topCentreView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _topCentreView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
+                _topCentreView.ToRightOf(_topLeftView, halfSidePadding),
+                _topCentreView.WithSameHeight(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.CONTENT_PADDING),
+                _topCentreView.WithSameWidth(View).WithMultiplier(0.5f).Minus(iOSConstants.SIDE_PADDING),
 
-                _topRightView.AtTopOf(View),
-                _topRightView.ToRightOf(_topCentreView),
-                _topRightView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _topRightView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _topRightView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
+                _topRightView.ToRightOf(_topCentreView, halfSidePadding),
+                _topRightView.AtRightOf(View, iOSConstants.SIDE_PADDING),
+                _topRightView.WithSameHeight(_topCentreView),
 
-                _middleLeftView.Below(_topLeftView),
-                _middleLeftView.AtLeftOf(View),
-                _middleLeftView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _middleLeftView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _middleLeftView.Below(_topLeftView, halfContentPadding),
+                _middleLeftView.AtLeftOf(View, iOSConstants.SIDE_PADDING),
+                _middleLeftView.WithSameWidth(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.SIDE_PADDING),
 
-                _middleCentreView.Below(_topCentreView),
-                _middleCentreView.ToRightOf(_middleLeftView),
-                _middleCentreView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _middleCentreView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _middleCentreView.Below(_topCentreView, halfContentPadding),
+                _middleCentreView.ToRightOf(_middleLeftView, halfSidePadding),
+                _middleCentreView.WithSameBottom(_middleLeftView),
+                _middleCentreView.WithSameWidth(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.SIDE_PADDING),
 
-                _middleRightView.Below(_topRightView),
-                _middleRightView.ToRightOf(_middleCentreView),
-                _middleRightView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _middleRightView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _middleRightView.Below(_topRightView, halfContentPadding),
+                _middleRightView.ToRightOf(_middleCentreView, halfSidePadding),
+                _middleRightView.AtRightOf(View, iOSConstants.SIDE_PADDING),
+                _middleRightView.WithSameHeight(_middleCentreView),
 
-                _bottomLeftView.Below(_middleLeftView),
-                _bottomLeftView.AtLeftOf(View),
-                _bottomLeftView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _bottomLeftView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _bottomLeftView.Below(_middleLeftView, halfContentPadding),
+                _bottomLeftView.AtBottomOf(View, iOSConstants.CONTENT_PADDING),
+                _bottomLeftView.AtLeftOf(View, iOSConstants.SIDE_PADDING),
+                _bottomLeftView.WithSameHeight(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.CONTENT_PADDING),
+                _bottomLeftView.WithSameWidth(View).WithMultiplier(0.5f).Minus(iOSConstants.SIDE_PADDING),
 
-                _bottomCentreView.Below(_middleCentreView),
-                _bottomCentreView.ToRightOf(_bottomLeftView),
-                _bottomCentreView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _bottomCentreView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _bottomCentreView.Below(_middleCentreView, halfContentPadding),
+                _bottomCentreView.AtBottomOf(View, iOSConstants.CONTENT_PADDING),
+                _bottomCentreView.ToRightOf(_bottomLeftView, halfSidePadding),
+                _bottomCentreView.WithSameHeight(_bottomLeftView),
+                _bottomCentreView.WithSameWidth(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.SIDE_PADDING),
 
-                _bottomRightView.Below(_middleRightView),
-                _bottomRightView.ToRightOf(_bottomCentreView),
-                _bottomRightView.WithSameHeight(View).WithMultiplier(1f / 3f),
-                _bottomRightView.WithSameWidth(View).WithMultiplier(1f / 3f),
+                _bottomRightView.Below(_middleRightView, halfContentPadding),
+                _bottomRightView.AtBottomOf(View, iOSConstants.CONTENT_PADDING),
+                _bottomRightView.ToRightOf(_bottomCentreView, halfSidePadding),
+                _bottomRightView.AtRightOf(View, iOSConstants.SIDE_PADDING),
+                _bottomRightView.WithSameHeight(_bottomLeftView)
             });
         }
 
@@ -139,7 +151,7 @@ namespace Demo.iOS.Views
             {
                 Text = labelText,
                 TextColor = textColour,
-                Font = UIFont.FromName(iOSConstants.FONT_HELVETICA_NEUE, iOSConstants.FONT_MEDIUM),
+                Font = UIFont.FromName(iOSConstants.FONT_HELVETICA_NEUE, iOSConstants.FONT_SMALL),
                 Lines = 0,
                 LineBreakMode = UILineBreakMode.WordWrap,
                 TranslatesAutoresizingMaskIntoConstraints = false
@@ -151,7 +163,8 @@ namespace Demo.iOS.Views
             parent.AddConstraints(new FluentLayout[]
             {
                 child.WithSameCenterX(parent),
-                child.WithSameCenterY(parent)
+                child.WithSameCenterY(parent),
+                child.Width().LessThanOrEqualTo(parent.Bounds.Width - iOSConstants.INTERNAL_PADDING * 2)
             });
         }
     }

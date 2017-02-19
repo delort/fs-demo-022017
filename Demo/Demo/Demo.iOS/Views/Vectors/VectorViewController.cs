@@ -33,7 +33,7 @@ namespace Demo.iOS.Views
             _vectorExplanantion = new UILabel
             {
                 Text = iOSConstants.VECTOR_EXPLANATION,
-                Font = UIFont.FromName(iOSConstants.FONT_HELVETICA_NEUE, iOSConstants.FONT_SMALL),
+                Font = UIFont.FromName(iOSConstants.FONT_HELVETICA_NEUE, iOSConstants.FONT_MEDIUM),
                 Lines = 0,
                 LineBreakMode = UILineBreakMode.WordWrap
             };
