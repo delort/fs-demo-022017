@@ -1,7 +1,6 @@
 ﻿using Cirrious.FluentLayouts.Touch;
 using Demo.Core.ViewModels;
 using Demo.iOS.Helpers;
-using MvvmCross.Binding.BindingContext;
 using UIKit;
 
 namespace Demo.iOS.Views
@@ -20,6 +19,22 @@ namespace Demo.iOS.Views
             CreateViewElements();
 
             LayoutViewElements();
+        }
+
+        public override void ViewDidLayoutSubviews()
+        {
+            base.ViewDidLayoutSubviews();
+
+            // These constraints rely on other constraints having previously been applied, so we use ViewDidLayoutSubviews()
+            AddCenterInsideConstraints(_topLeftView, _topLeftLabel);
+            AddCenterInsideConstraints(_topCentreView, _topCentreLabel);
+            AddCenterInsideConstraints(_topRightView, _topRightLabel);
+            AddCenterInsideConstraints(_middleLeftView, _middleLeftLabel);
+            AddCenterInsideConstraints(_middleCentreView, _middleCentreLabel);
+            AddCenterInsideConstraints(_middleRightView, _middleRightLabel);
+            AddCenterInsideConstraints(_bottomLeftView, _bottomLeftLabel);
+            AddCenterInsideConstraints(_bottomCentreView, _bottomCentreLabel);
+            AddCenterInsideConstraints(_bottomRightView, _bottomRightLabel);
         }
 
         void CreateViewElements()
@@ -55,22 +70,6 @@ namespace Demo.iOS.Views
             _bottomRightView.Add(_bottomRightLabel);
 
             View.AddSubviews(_topLeftView, _topCentreView, _topRightView, _middleLeftView, _middleCentreView, _middleRightView, _bottomLeftView, _bottomCentreView, _bottomRightView);
-        }
-
-        public override void ViewDidLayoutSubviews()
-        {
-            base.ViewDidLayoutSubviews();
-
-            // These constraints rely on other constraints having previously been applied, so we use ViewDidLayoutSubviews()
-            AddCenterInsideConstraints(_topLeftView, _topLeftLabel);
-            AddCenterInsideConstraints(_topCentreView, _topCentreLabel);
-            AddCenterInsideConstraints(_topRightView, _topRightLabel);
-            AddCenterInsideConstraints(_middleLeftView, _middleLeftLabel);
-            AddCenterInsideConstraints(_middleCentreView, _middleCentreLabel);
-            AddCenterInsideConstraints(_middleRightView, _middleRightLabel);
-            AddCenterInsideConstraints(_bottomLeftView, _bottomLeftLabel);
-            AddCenterInsideConstraints(_bottomCentreView, _bottomCentreLabel);
-            AddCenterInsideConstraints(_bottomRightView, _bottomRightLabel);
         }
 
         void LayoutViewElements()
