@@ -13,6 +13,7 @@ namespace Demo.iOS.Helpers
         public const string VIEW_CONTROLLER_LOCALREF_FUNCTION_TITLE = "Local Ref Function";
         public const string VIEW_CONTROLLER_EXTERNALREF_FUNCTION_TITLE = "External Ref Function";
         public const string VIEW_CONTROLLER_SUBSCRIPTION_FUNCTION_TITLE = "Subscription Function";
+        public const string VIEW_CONTROLLER_FLUENTLAYOUT_TITLE = "FluentLayout";
 
         #endregion
 
@@ -33,6 +34,7 @@ namespace Demo.iOS.Helpers
 
         public const string FONT_HELVETICA_NEUE = "HelveticaNeue";
         public static nfloat FONT_SMALL = 12f;
+        public static nfloat FONT_MEDIUM = 10f;
 
         #endregion
 
@@ -43,6 +45,7 @@ namespace Demo.iOS.Helpers
         #endregion
 
         public const string BUTTON_VECTOR = "View Vector";
+        public const string BUTTON_FLUENTLAYOUT = "View FluentLayout";
         public const string BUTTON_CLOSE = "Close";
         public const string BUTTON_MESSAGE = "View Message";
         public const string BUTTON_DELEGATE_FUNCTIONS = "View Delegate Functions";

@@ -219,6 +219,7 @@
     <Compile Include="Views\Delegates\DelegateFunctionsViewController.cs" />
     <Compile Include="Views\Delegates\DelegateLocalReferenceViewController.cs" />
     <Compile Include="Views\Delegates\DelegateSubscriptionViewController.cs" />
+    <Compile Include="Views\Layout Methods\FluentLayoutViewController.cs" />
     <Compile Include="Views\HomeViewController.cs" />
     <BundleResource Include="Resources\Icon@2x.png" />
     <BundleResource Include="Resources\Icon-60@2x.png" />

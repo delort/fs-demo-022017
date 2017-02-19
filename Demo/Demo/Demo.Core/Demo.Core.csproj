@@ -41,6 +41,7 @@
     <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateFunctionsViewModel.cs" />
     <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateLocalReferenceViewModel.cs" />
     <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateSubscriptionViewModel.cs" />
+    <Compile Include="ViewModels\FluentLayoutViewModel.cs" />
     <Compile Include="ViewModels\VectorsViewModels\RasterViewModel.cs" />
     <Compile Include="ViewModels\VectorsViewModels\VectorViewModel.cs" />
     <Compile Include="ViewModels\MainContainerViewModel.cs" />

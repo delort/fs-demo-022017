@@ -15,6 +15,10 @@ namespace Demo.Core.ViewModels
         public IMvxCommand RasterCommand =>
             _rasterCommand ?? (_rasterCommand = new MvxCommand(GoToRaster));
 
+        IMvxCommand _fluentLayoutCommand;
+        public IMvxCommand FluentLayoutCommand =>
+            _fluentLayoutCommand ?? (_fluentLayoutCommand = new MvxCommand(GoToFluentLayout));
+
         IMvxCommand _delegateFunctionsCommand;
         public IMvxCommand DelegateFunctionsCommand =>
             _delegateFunctionsCommand ?? (_delegateFunctionsCommand = new MvxCommand(GoToDelegateFunctions));
@@ -26,6 +30,8 @@ namespace Demo.Core.ViewModels
         void GoToVector() => ShowViewModel<VectorViewModel>();
 
         void GoToRaster() => ShowViewModel<RasterViewModel>();
+
+        void GoToFluentLayout() => ShowViewModel<FluentLayoutViewModel>();
 
         void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
 
