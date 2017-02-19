@@ -185,21 +185,21 @@
     <Compile Include="Helpers\AndroidConstants.cs" />
     <Compile Include="Linker\LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
-    <Compile Include="Views\Activities\BaseActivity.cs" />
-    <Compile Include="Views\Activities\BaseFragmentActivity.cs" />
+    <Compile Include="Views\Activities\Base\BaseActivity.cs" />
+    <Compile Include="Views\Activities\Base\BaseFragmentActivity.cs" />
     <Compile Include="Views\Activities\MainActivity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="Views\Activities\SplashActivity.cs" />
-    <Compile Include="Views\Fragments\BaseFragment.cs" />
-    <Compile Include="Views\Activities\Delegates\DelegateExportActivity.cs" />
-    <Compile Include="Views\Activities\Delegates\DelegateExternalReferenceActivity.cs" />
-    <Compile Include="Views\Fragments\DelegateFunctionsFragment.cs" />
-    <Compile Include="Views\Activities\Delegates\DelegateLocalReferenceActivity.cs" />
-    <Compile Include="Views\Activities\Delegates\DelegateSubscriptionActivity.cs" />
+    <Compile Include="Views\Fragments\Base\BaseFragment.cs" />
+    <Compile Include="Views\Activities\Delegate Functions\DelegateExportActivity.cs" />
+    <Compile Include="Views\Activities\Delegate Functions\DelegateExternalReferenceActivity.cs" />
+    <Compile Include="Views\Fragments\Delegate Functions\DelegateFunctionsFragment.cs" />
+    <Compile Include="Views\Activities\Delegate Functions\DelegateLocalReferenceActivity.cs" />
+    <Compile Include="Views\Activities\Delegate Functions\DelegateSubscriptionActivity.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
-    <Compile Include="Views\Fragments\RasterFragment.cs" />
-    <Compile Include="Views\Fragments\VectorFragment.cs" />
+    <Compile Include="Views\Fragments\Graphics\RasterFragment.cs" />
+    <Compile Include="Views\Fragments\Graphics\VectorFragment.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\layout_activity.xml">

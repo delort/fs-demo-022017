@@ -1,5 +1,4 @@
-﻿using System;
-using Cirrious.FluentLayouts.Touch;
+﻿using Cirrious.FluentLayouts.Touch;
 using Demo.Core.ViewModels;
 using Demo.iOS.Helpers;
 using MvvmCross.Binding.BindingContext;
@@ -10,8 +9,7 @@ namespace Demo.iOS.Views
     public class FluentLayoutViewController : BaseViewController<FluentLayoutViewModel>
     {
         public override string Title => iOSConstants.VIEW_CONTROLLER_FLUENTLAYOUT_TITLE;
-
-        MvxFluentBindingDescriptionSet<FluentLayoutViewController, FluentLayoutViewModel> _bindingSet;
+        
         UIView _topLeftView, _topCentreView, _topRightView, _middleLeftView, _middleCentreView, _middleRightView, _bottomLeftView, _bottomCentreView, _bottomRightView;
         UILabel _topLeftLabel, _topCentreLabel, _topRightLabel, _middleLeftLabel, _middleCentreLabel, _middleRightLabel, _bottomLeftLabel, _bottomCentreLabel, _bottomRightLabel;
 

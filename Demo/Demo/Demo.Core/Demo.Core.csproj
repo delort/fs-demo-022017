@@ -35,15 +35,15 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateExportViewModel.cs" />
-    <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateExternalReferenceViewModel.cs" />
-    <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateFunctionsViewModel.cs" />
-    <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateLocalReferenceViewModel.cs" />
-    <Compile Include="ViewModels\DelegateFunctionsViewModels\DelegateSubscriptionViewModel.cs" />
-    <Compile Include="ViewModels\FluentLayoutViewModel.cs" />
-    <Compile Include="ViewModels\VectorsViewModels\RasterViewModel.cs" />
-    <Compile Include="ViewModels\VectorsViewModels\VectorViewModel.cs" />
+    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Delegate Functions\DelegateExportViewModel.cs" />
+    <Compile Include="ViewModels\Delegate Functions\DelegateExternalReferenceViewModel.cs" />
+    <Compile Include="ViewModels\Delegate Functions\DelegateFunctionsViewModel.cs" />
+    <Compile Include="ViewModels\Delegate Functions\DelegateLocalReferenceViewModel.cs" />
+    <Compile Include="ViewModels\Delegate Functions\DelegateSubscriptionViewModel.cs" />
+    <Compile Include="ViewModels\Layout Methods\FluentLayoutViewModel.cs" />
+    <Compile Include="ViewModels\Graphics\RasterViewModel.cs" />
+    <Compile Include="ViewModels\Graphics\VectorViewModel.cs" />
     <Compile Include="ViewModels\MainContainerViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
