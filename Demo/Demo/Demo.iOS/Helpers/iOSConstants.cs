@@ -9,11 +9,12 @@ namespace Demo.iOS.Helpers
 
         public const string VIEW_CONTROLLER_HOME_TITLE = "Home";
         public const string VIEW_CONTROLLER_VECTOR_TITLE = "Vector";
+        public const string VIEW_CONTROLLER_FLUENTLAYOUT_TITLE = "FluentLayout";
+        public const string VIEW_CONTROLLER_STORYBOARD_TITLE = "Storyboard";
         public const string VIEW_CONTROLLER_DELEGATE_FUNCTIONS_TITLE = "Delegate Functions";
         public const string VIEW_CONTROLLER_LOCALREF_FUNCTION_TITLE = "Local Ref Function";
         public const string VIEW_CONTROLLER_EXTERNALREF_FUNCTION_TITLE = "External Ref Function";
         public const string VIEW_CONTROLLER_SUBSCRIPTION_FUNCTION_TITLE = "Subscription Function";
-        public const string VIEW_CONTROLLER_FLUENTLAYOUT_TITLE = "FluentLayout";
 
         #endregion
 
@@ -47,6 +48,7 @@ namespace Demo.iOS.Helpers
 
         public const string BUTTON_VECTOR = "View Vector";
         public const string BUTTON_FLUENTLAYOUT = "View FluentLayout";
+        public const string BUTTON_STORYBOARD = "View Storyboard";
         public const string BUTTON_CLOSE = "Close";
         public const string BUTTON_MESSAGE = "View Message";
         public const string BUTTON_DELEGATE_FUNCTIONS = "View Delegate Functions";

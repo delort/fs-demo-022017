@@ -23,7 +23,7 @@
     <MtouchLink>Full</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
     <MtouchSdkVersion>10.2</MtouchSdkVersion>
-    <MtouchProfiling>True</MtouchProfiling>
+    <MtouchProfiling>False</MtouchProfiling>
     <MtouchFastDev>False</MtouchFastDev>
     <MtouchUseLlvm>False</MtouchUseLlvm>
     <MtouchUseThumb>False</MtouchUseThumb>
@@ -243,6 +243,7 @@
     <BundleResource Include="Resources\Default-Landscape@2x.png" />
     <BundleResource Include="Resources\Default-Landscape.png" />
     <Compile Include="Views\Graphics\VectorViewController.cs" />
+    <Compile Include="Views\Layout Methods\StoryboardView.cs" />
     <None Include="Info.plist">
       <SubType>Designer</SubType>
     </None>
@@ -253,6 +254,7 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <InterfaceDefinition Include="Views\Layout Methods\DemoStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Cirrious.FluentLayouts.Touch, Version=2.5.0.0, Culture=neutral, processorArchitecture=MSIL">

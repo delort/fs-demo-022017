@@ -27,6 +27,10 @@ namespace Demo.Core.ViewModels
         public IMvxCommand FluentLayoutCommand =>
             _fluentLayoutCommand ?? (_fluentLayoutCommand = new MvxCommand(GoToFluentLayout));
 
+        IMvxCommand _storyboardCommand;
+        public IMvxCommand StoryboardCommand =>
+            _storyboardCommand ?? (_storyboardCommand = new MvxCommand(GoToStoryboard));
+
         IMvxCommand _delegateFunctionsCommand;
         public IMvxCommand DelegateFunctionsCommand =>
             _delegateFunctionsCommand ?? (_delegateFunctionsCommand = new MvxCommand(GoToDelegateFunctions));
@@ -44,6 +48,8 @@ namespace Demo.Core.ViewModels
         void GoToRaster() => ShowViewModel<RasterViewModel>();
 
         void GoToFluentLayout() => ShowViewModel<FluentLayoutViewModel>();
+
+        void GoToStoryboard() => ShowViewModel<StoryboardViewModel>();
 
         void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
 
