@@ -23,14 +23,6 @@ namespace Demo.iOS
         // Learn more about using Setup to register custom bindings, platform services, and more at https://github.com/MvvmCross/MvvmCross/wiki/Customizing-using-App-and-Setup#setupcs
         protected override IMvxApplication CreateApp() => new App();
 
-        protected override void InitializeFirstChance()
-        {
-            base.InitializeFirstChance();
-
-            //! HACK [JF] :: need to figure out why iOS is not able to resolve the alert dialog
-            Mvx.RegisterSingleton<IMvxAlertDialog>(new MvxAlertDialog());
-        }
-
         protected override void FillTargetFactories(IMvxTargetBindingFactoryRegistry registry)
         {
             base.FillTargetFactories(registry);
