@@ -8,7 +8,7 @@ namespace Demo.iOS.Views
     public class FluentLayoutViewController : BaseViewController<FluentLayoutViewModel>
     {
         public override string Title => iOSConstants.VIEW_CONTROLLER_FLUENTLAYOUT_TITLE;
-        
+
         UIView _topLeftView, _topCentreView, _topRightView, _middleLeftView, _middleCentreView, _middleRightView, _bottomLeftView, _bottomCentreView, _bottomRightView;
         UILabel _topLeftLabel, _topCentreLabel, _topRightLabel, _middleLeftLabel, _middleCentreLabel, _middleRightLabel, _bottomLeftLabel, _bottomCentreLabel, _bottomRightLabel;
 
@@ -74,7 +74,7 @@ namespace Demo.iOS.Views
 
         void LayoutViewElements()
         {
-            var oneThirdMultiplier = 1f / 3f;
+            const float oneThirdMultiplier = 1f / 3f;
             var halfContentPadding = iOSConstants.CONTENT_PADDING / 2f;
             var halfSidePadding = iOSConstants.SIDE_PADDING / 2f;
 

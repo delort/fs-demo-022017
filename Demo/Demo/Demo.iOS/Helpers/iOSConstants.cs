@@ -31,7 +31,7 @@ namespace Demo.iOS.Helpers
 
         #endregion
 
-        #region FONT
+        #region Font
 
         public const string FONT_HELVETICA_NEUE = "HelveticaNeue";
         public static nfloat FONT_MEDIUM = 12f;
@@ -54,6 +54,6 @@ namespace Demo.iOS.Helpers
         public const string BUTTON_EXTERNALREF_FUNCTION = "View External Ref Function";
         public const string BUTTON_SUBSCRIPTION_FUNCTION = "View Subscription Function";
 
-        public const string VECTOR_EXPLANATION = "iOS does not natively support vector graphics. Id you like, you can provide a .pdf vector graphic for an image @1x scale, which Xamarin will rasterize at compile time into the appropriate dimensions for the various iOS scales. This is how the above image is being rendered. However, any resizing of images done after compile time is still happening on rasterised images, so the benefits over raster images aren't as pronounced as they are on Android.";
+        public const string VECTOR_EXPLANATION = "iOS does not natively support vector graphics. Id you like, you can provide a .pdf vector graphic for an image @1x scale, which Xamarin will rasterise at compile time into the appropriate dimensions for the various iOS scales. This is how the above image is being rendered. However, any resizing of images done after compile time is still happening on rasterised images, so the benefits over raster images aren't as pronounced as they are on Android.";
     }
 }
