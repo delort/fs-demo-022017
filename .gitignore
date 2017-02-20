@@ -157,6 +157,7 @@ PublishScripts/
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
 !**/packages/Demo.Plugin.AlertDialog.1.0.0-beta1/*
+!**/packages/Demo.AdvancedPCL.1.0.0-beta1/*
 
 # Uncomment if necessary however generally it will be regenerated when needed
 #!**/packages/repositories.config
