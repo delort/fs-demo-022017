@@ -40,8 +40,8 @@ namespace Demo.iOS.Views
         void CreateViewElements()
         {
             _topLeftView = CreateEmptyView(UIColor.Yellow);
-            _topCentreView = CreateEmptyView(UIColor.Red);
-            _topRightView = CreateEmptyView(UIColor.Purple);
+            _topCentreView = CreateEmptyView(UIColor.Purple);
+            _topRightView = CreateEmptyView(UIColor.Red);
             _middleLeftView = CreateEmptyView(UIColor.Black);
             _middleCentreView = CreateEmptyView(UIColor.Blue);
             _middleRightView = CreateEmptyView(UIColor.Green);
@@ -49,14 +49,14 @@ namespace Demo.iOS.Views
             _bottomCentreView = CreateEmptyView(UIColor.Orange);
             _bottomRightView = CreateEmptyView(UIColor.Brown);
 
-            _topLeftLabel = CreateLabel("Height and width relative to superview", UIColor.Black);
-            _topCentreLabel = CreateLabel("Height and width relative to superview", UIColor.White);
-            _topRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.White);
-            _middleLeftLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.White);
-            _middleCentreLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.White);
+            _topLeftLabel = CreateLabel("Height (½) and width (⅓) relative to superview", UIColor.Black);
+            _topCentreLabel = CreateLabel("Height and width inferred from siblings", UIColor.White);
+            _topRightLabel = CreateLabel("Height inferred from siblings, width (½) relative to superview", UIColor.White);
+            _middleLeftLabel = CreateLabel("Height inferred from siblings, width (⅓) relative to superview", UIColor.White);
+            _middleCentreLabel = CreateLabel("Height inferred from siblings, width (⅓) relative to superview", UIColor.White);
             _middleRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.Black);
-            _bottomLeftLabel = CreateLabel("Height and width relative to superview", UIColor.Black);
-            _bottomCentreLabel = CreateLabel("Height inferred from siblings, width relative to superview", UIColor.Black);
+            _bottomLeftLabel = CreateLabel("Height (⅓) and width (½) relative to superview", UIColor.Black);
+            _bottomCentreLabel = CreateLabel("Height inferred from siblings, width (⅓) relative to superview", UIColor.Black);
             _bottomRightLabel = CreateLabel("Height and width inferred from siblings", UIColor.White);
 
             _topLeftView.Add(_topLeftLabel);
@@ -87,13 +87,14 @@ namespace Demo.iOS.Views
 
                 _topCentreView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
                 _topCentreView.ToRightOf(_topLeftView, halfSidePadding),
+                _topCentreView.ToLeftOf(_topRightView, halfSidePadding),
                 _topCentreView.WithSameHeight(View).WithMultiplier(oneThirdMultiplier).Minus(iOSConstants.CONTENT_PADDING),
-                _topCentreView.WithSameWidth(View).WithMultiplier(0.5f).Minus(iOSConstants.SIDE_PADDING),
 
                 _topRightView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
                 _topRightView.ToRightOf(_topCentreView, halfSidePadding),
                 _topRightView.AtRightOf(View, iOSConstants.SIDE_PADDING),
                 _topRightView.WithSameHeight(_topCentreView),
+                _topRightView.WithSameWidth(View).WithMultiplier(0.5f).Minus(iOSConstants.SIDE_PADDING),
 
                 _middleLeftView.Below(_topLeftView, halfContentPadding),
                 _middleLeftView.AtLeftOf(View, iOSConstants.SIDE_PADDING),
