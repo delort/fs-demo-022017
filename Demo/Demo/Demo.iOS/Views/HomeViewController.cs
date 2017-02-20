@@ -11,7 +11,7 @@ namespace Demo.iOS.Views
         public override string Title => iOSConstants.VIEW_CONTROLLER_HOME_TITLE;
 
         MvxFluentBindingDescriptionSet<HomeViewController, HomeViewModel> _bindingSet;
-        UIButton _goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton;
+        UIButton _goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton, _showBaitSwitchAlertButton;
 
         public override void ViewDidLoad()
         {
@@ -38,7 +38,10 @@ namespace Demo.iOS.Views
             _showPluginAlertButton = new UIButton(UIButtonType.RoundedRect);
             _showPluginAlertButton.SetTitle(iOSConstants.BUTTON_PLUGIN_ALERT, UIControlState.Normal);
 
-            View.AddSubviews(_goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton);
+            _showBaitSwitchAlertButton = new UIButton(UIButtonType.RoundedRect);
+            _showBaitSwitchAlertButton.SetTitle(iOSConstants.BUTTON_BAIT_SWITCH_ALERT, UIControlState.Normal);
+
+            View.AddSubviews(_goToVectorButton, _goToFluentLayoutButton, _goToDelegateFunctionsButton, _showPluginAlertButton, _showBaitSwitchAlertButton);
         }
 
         void LayoutViewElements()
@@ -55,7 +58,10 @@ namespace Demo.iOS.Views
                 _goToDelegateFunctionsButton.WithSameCenterX(View),
 
                 _showPluginAlertButton.Below(_goToDelegateFunctionsButton, iOSConstants.CONTENT_PADDING),
-                _showPluginAlertButton.WithSameCenterX(View)
+                _showPluginAlertButton.WithSameCenterX(View),
+
+                _showBaitSwitchAlertButton.Below(_showPluginAlertButton, iOSConstants.CONTENT_PADDING),
+                _showBaitSwitchAlertButton.WithSameCenterX(View)
             });
         }
 
@@ -67,6 +73,7 @@ namespace Demo.iOS.Views
             _bindingSet.Bind(_goToFluentLayoutButton).To(vm => vm.FluentLayoutCommand);
             _bindingSet.Bind(_goToDelegateFunctionsButton).To(vm => vm.DelegateFunctionsCommand);
             _bindingSet.Bind(_showPluginAlertButton).To(vm => vm.PluginAlertCommand);
+            _bindingSet.Bind(_showBaitSwitchAlertButton).To(vm => vm.BaitSwitchAlertCommand);
 
             _bindingSet.Apply();
         }
