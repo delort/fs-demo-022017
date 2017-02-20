@@ -8,7 +8,7 @@ using MvvmCross.Droid.Shared.Attributes;
 
 namespace Demo.Android.Views
 {
-    [MvxFragment(typeof(MainContainerViewModel), Resource.Id.content_frame)]
+    [MvxFragment(typeof(MainContainerViewModel), Resource.Id.content_frame, true)]
     [Register(nameof(DelegateFunctionsFragment))]
     public class DelegateFunctionsFragment : BaseFragment<DelegateFunctionsViewModel>
     {
