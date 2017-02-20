@@ -1,4 +1,5 @@
-﻿using Demo.Plugin.AlertDialog;
+﻿using Demo.AdvancedPCL;
+using Demo.Plugin.AlertDialog;
 using MvvmCross.Core.ViewModels;
 
 namespace Demo.Core.ViewModels
@@ -33,7 +34,11 @@ namespace Demo.Core.ViewModels
 
         IMvxCommand _pluginAlertCommand;
         public IMvxCommand PluginAlertCommand =>
-            _pluginAlertCommand ?? (_pluginAlertCommand = new MvxCommand(ShowAlertDialog));
+            _pluginAlertCommand ?? (_pluginAlertCommand = new MvxCommand(ShowPluginAlertDialog));
+
+        IMvxCommand _baitSwitchAlertCommand;
+        public IMvxCommand BaitSwitchAlertCommand =>
+            _baitSwitchAlertCommand ?? (_baitSwitchAlertCommand = new MvxCommand(ShowBaitSwitchAlertDialog));
 
         #endregion
 
@@ -51,9 +56,15 @@ namespace Demo.Core.ViewModels
 
         #region Command Execution
 
-        void ShowAlertDialog()
+        void ShowPluginAlertDialog()
         {
             _mvxAlertDialog.ShowDialog(Constants.ALERT_MESSAGE, Constants.ALERT_TITLE, Constants.ALERT_BUTTON);
+        }
+
+        void ShowBaitSwitchAlertDialog()
+        {
+            var dialog = new AlertDialog();
+            dialog.ShowDialog(Constants.ALERT_BAITSWITCH_MESSAGE, Constants.ALERT_BAITSWITCH_TITLE, Constants.ALERT_BUTTON);
         }
 
         #endregion

@@ -40,4 +40,13 @@
     android:layout_below="@id/button_delegate_fucntions"
     android:text="@string/button_plugin_alert" />
 
+  <Button
+    android:id="@+id/button_plugin_alert_bait_switch"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/content_padding"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/button_plugin_alert"
+    android:text="@string/button_plugin_alert_bait_switch" />
+
 </RelativeLayout>

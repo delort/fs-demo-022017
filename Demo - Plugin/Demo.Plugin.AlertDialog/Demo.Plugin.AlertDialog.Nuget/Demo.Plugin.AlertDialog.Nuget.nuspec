@@ -6,8 +6,6 @@
 		<title>MvvmCross - AlertDialog Plugin</title>
 		<authors>Plac3hold3r</authors>
 		<owners>Plac3hold3r</owners>
-		<licenseUrl>http://opensource.org/licenses/ms-pl.html</licenseUrl>
-		<projectUrl>https://github.com/MvvmCross/MvvmCross-Plugins</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<description>A AlertDialog plugin for MvvmCross</description>
 		<tags>mvvm mvvmcross cross xamarin android ios monodroid monotouch xamarin.android xamarin.ios net net45 netcore plugin</tags>
@@ -21,10 +19,7 @@
 		<!-- PCL -->
 		<file src="..\Release\Portable\Demo.Plugin.AlertDialog.*" target="lib\portable-net45+win+wpa81+wp80" />
 
-		<!-- dotnet -->
-		<file src="..\Release\Portable\Demo.Plugin.AlertDialog.*" target="lib\dotnet" />
-
-    <!-- droid -->
+    	<!-- Android -->
 		<file src="..\Release\Portable\Demo.Plugin.AlertDialog.*" target="lib\MonoAndroid" />
 		<file src="..\Release\Droid\Demo.Plugin.AlertDialog.Droid.*" target="lib\MonoAndroid" />
 		<file src="BootstrapContent\AlertDialogPluginBootstrap.cs.pp" target="content\MonoAndroid\Bootstrap\AlertDialogPluginBootstrap.cs.pp" />
