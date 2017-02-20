@@ -55,7 +55,6 @@ namespace Demo.iOS.Views
             View.AddConstraints(new FluentLayout[]
             {
                 _vectorImageView.AtTopOf(View, iOSConstants.CONTENT_PADDING),
-                _vectorImageView.WithSameCenterX(View),
 
                 _sizeSlider.AtBottomOf(View, iOSConstants.CONTENT_PADDING),
                 _sizeSlider.AtLeftOf(View, iOSConstants.SIDE_PADDING),
