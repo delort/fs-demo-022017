@@ -10,9 +10,7 @@ namespace Demo.Android.Views
     {
         protected abstract int ActivityLayoutId { get; }
 
-        Toolbar _toolbar;
-        protected Toolbar Toolbar =>
-            FindViewById<Toolbar>(Resource.Id.toolbar);
+        protected Toolbar Toolbar => FindViewById<Toolbar>(Resource.Id.toolbar);
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -20,7 +18,7 @@ namespace Demo.Android.Views
 
             SetContentView(ActivityLayoutId);
 
-            SetSupportActionBar(_toolbar);
+            SetSupportActionBar(Toolbar);
         }
     }
 }
