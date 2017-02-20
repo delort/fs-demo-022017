@@ -8,8 +8,7 @@ namespace Demo.Core.ViewModels
 		#region Commands
 
 		IMvxCommand _navigateBackCommand;
-		public IMvxCommand NavigateBackCommand
-			=> CreateCommand(ref _navigateBackCommand, GoBack);
+		public IMvxCommand NavigateBackCommand => CreateCommand(ref _navigateBackCommand, GoBack);
 
 		#endregion
 
