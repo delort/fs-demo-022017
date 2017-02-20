@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Demo.AdvancedPCL</id>
+        <version>1.0.0-beta1</version>
+        <authors>Plac3hold3r</authors>
+        <owners>Plac3hold3r</owners>
+        <description>A AlertDialog plugin for using Advanced PCL/ bait and switch</description>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <tags>mvvm mvvmcross cross xamarin android ios monodroid monotouch xamarin.android xamarin.ios net net45 netcore plugin</tags>
+        <iconUrl>http://i.imgur.com/BvdAtgT.png</iconUrl>
+        <dependencies>
+          <dependency id="MvvmCross.Platform" version="4.4.0" />
+        </dependencies>
+    </metadata>
+  <files>
+
+    <!-- PCL -->
+    <file src="Release/Portable/Demo.AdvancedPCL.dll" target="lib/portable-net45+win+wpa81+wp80/Demo.AdvancedPCL.dll" />
+    
+    <!-- Android -->
+    <file src="Release/MonoAndroid403/Demo.AdvancedPCL.dll" target="lib/MonoAndroid403/Demo.AdvancedPCL.dll" />
+    
+    <!-- iOS -->
+    <file src="Release/Xamarin.iOS10/Demo.AdvancedPCL.dll" target="lib/Xamarin.iOS10/Demo.AdvancedPCL.dll" />
+    
+    <!-- Source -->
+    <file src="*.cs" target="src" />
+  </files>
+</package>
