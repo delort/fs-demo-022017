@@ -10,7 +10,7 @@ namespace Demo.Plugin.AlertDialog.Droid
         {
             var context = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
-            var dialog = new Android.App.AlertDialog.Builder(context)
+            new Android.App.AlertDialog.Builder(context)
                 .SetMessage(message)
                 .SetTitle(title)
                 .SetPositiveButton(buttonLabel, (sender, args) => bottonClick?.Invoke())

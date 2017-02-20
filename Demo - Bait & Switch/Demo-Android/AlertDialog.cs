@@ -9,7 +9,7 @@ namespace Demo.AdvancedPCL
 		{
 			var context = Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity;
 
-			var dialog = new Android.App.AlertDialog.Builder(context)
+			new Android.App.AlertDialog.Builder(context)
 				.SetMessage($"{message} [Android]")
 				.SetTitle(title)
 				.SetPositiveButton(buttonLabel, (sender, args) => bottonClick?.Invoke())
