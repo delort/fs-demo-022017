@@ -6,7 +6,6 @@ namespace Demo.Core.ViewModels
 {
 	public class HomeViewModel : BaseViewModel
 	{
-
 		readonly IMvxAlertDialog _mvxAlertDialog;
 
 		public HomeViewModel(IMvxAlertDialog mvxAlertDialog)
