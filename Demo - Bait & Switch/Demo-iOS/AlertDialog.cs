@@ -6,7 +6,7 @@ namespace Demo.AdvancedPCL
     {
         public void ShowDialog(string message, string title, string buttonLabel, System.Action bottonClick = null)
         {
-            var dialog = new UIAlertView(title, message, null, buttonLabel, null);
+            var dialog = new UIAlertView(title, $"{message} [iOS]", null, buttonLabel, null);
             dialog.Clicked += (sender, args) => bottonClick?.Invoke();
             dialog.Show();
         }
