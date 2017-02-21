@@ -2,7 +2,7 @@
 
 namespace Demo.Core.ViewModels
 {
-    public class FluentLayoutViewModel : MvxViewModel
+    public class FluentLayoutViewModel : BaseViewModel
     {
     }
 }

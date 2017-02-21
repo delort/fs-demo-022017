@@ -4,70 +4,63 @@ using MvvmCross.Core.ViewModels;
 
 namespace Demo.Core.ViewModels
 {
-    public class HomeViewModel : BaseViewModel
-    {
+	public class HomeViewModel : BaseViewModel
+	{
+		readonly IMvxAlertDialog _mvxAlertDialog;
 
-        readonly IMvxAlertDialog _mvxAlertDialog;
+		public HomeViewModel(IMvxAlertDialog mvxAlertDialog)
+		{
+			_mvxAlertDialog = mvxAlertDialog;
+		}
 
-        public HomeViewModel(IMvxAlertDialog mvxAlertDialog)
-        {
-            _mvxAlertDialog = mvxAlertDialog;
-        }
+		#region Commands
 
-        #region Commands
+		IMvxCommand _vectorCommand;
+		public IMvxCommand VectorCommand => CreateCommand(ref _vectorCommand, GoToVector);
 
-        IMvxCommand _vectorCommand;
-        public IMvxCommand VectorCommand =>
-            _vectorCommand ?? (_vectorCommand = new MvxCommand(GoToVector));
+		IMvxCommand _rasterCommand;
+		public IMvxCommand RasterCommand => CreateCommand(ref _rasterCommand, GoToRaster);
 
-        IMvxCommand _rasterCommand;
-        public IMvxCommand RasterCommand =>
-            _rasterCommand ?? (_rasterCommand = new MvxCommand(GoToRaster));
+		IMvxCommand _fluentLayoutCommand;
+		public IMvxCommand FluentLayoutCommand => CreateCommand(ref _fluentLayoutCommand, GoToFluentLayout);
 
-        IMvxCommand _fluentLayoutCommand;
-        public IMvxCommand FluentLayoutCommand =>
-            _fluentLayoutCommand ?? (_fluentLayoutCommand = new MvxCommand(GoToFluentLayout));
+		IMvxCommand _delegateFunctionsCommand;
+		public IMvxCommand DelegateFunctionsCommand => CreateCommand(ref _delegateFunctionsCommand, GoToDelegateFunctions);
 
-        IMvxCommand _delegateFunctionsCommand;
-        public IMvxCommand DelegateFunctionsCommand =>
-            _delegateFunctionsCommand ?? (_delegateFunctionsCommand = new MvxCommand(GoToDelegateFunctions));
+		IMvxCommand _pluginAlertCommand;
+		public IMvxCommand PluginAlertCommand => CreateCommand(ref _pluginAlertCommand, ShowPluginAlertDialog);
 
-        IMvxCommand _pluginAlertCommand;
-        public IMvxCommand PluginAlertCommand =>
-            _pluginAlertCommand ?? (_pluginAlertCommand = new MvxCommand(ShowPluginAlertDialog));
+		IMvxCommand _baitSwitchAlertCommand;
+		public IMvxCommand BaitSwitchAlertCommand => CreateCommand(ref _baitSwitchAlertCommand, ShowBaitSwitchAlertDialog);
 
-        IMvxCommand _baitSwitchAlertCommand;
-        public IMvxCommand BaitSwitchAlertCommand =>
-            _baitSwitchAlertCommand ?? (_baitSwitchAlertCommand = new MvxCommand(ShowBaitSwitchAlertDialog));
+		#endregion
 
-        #endregion
+		#region Navigation
 
-        #region Navigation
+		void GoToVector() => ShowViewModel<VectorViewModel>();
 
-        void GoToVector() => ShowViewModel<VectorViewModel>();
+		void GoToRaster() => ShowViewModel<RasterViewModel>();
 
-        void GoToRaster() => ShowViewModel<RasterViewModel>();
+		void GoToFluentLayout() => ShowViewModel<FluentLayoutViewModel>();
 
-        void GoToFluentLayout() => ShowViewModel<FluentLayoutViewModel>();
+		void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
 
-        void GoToDelegateFunctions() => ShowViewModel<DelegateFunctionsViewModel>();
+		#endregion
 
-        #endregion
+		#region Command Execution
 
-        #region Command Execution
+		void ShowPluginAlertDialog()
+		{
+			_mvxAlertDialog.ShowDialog(Constants.ALERT_MESSAGE, Constants.ALERT_TITLE, Constants.ALERT_BUTTON);
+		}
 
-        void ShowPluginAlertDialog()
-        {
-            _mvxAlertDialog.ShowDialog(Constants.ALERT_MESSAGE, Constants.ALERT_TITLE, Constants.ALERT_BUTTON);
-        }
+		void ShowBaitSwitchAlertDialog()
+		{
+			var dialog = new AlertDialog();
+			dialog.ShowDialog(Constants.ALERT_BAITSWITCH_MESSAGE, Constants.ALERT_BAITSWITCH_TITLE, Constants.ALERT_BUTTON);
+		}
 
-        void ShowBaitSwitchAlertDialog()
-        {
-            var dialog = new AlertDialog();
-            dialog.ShowDialog(Constants.ALERT_BAITSWITCH_MESSAGE, Constants.ALERT_BAITSWITCH_TITLE, Constants.ALERT_BUTTON);
-        }
+		#endregion
 
-        #endregion
-
-    }
+	}
 }

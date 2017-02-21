@@ -6,7 +6,7 @@ namespace Demo.AdvancedPCL
     {
         public void ShowDialog(string message, string title, string buttonLabel, System.Action bottonClick = null)
         {
-            throw new NotImplementedException();
+            throw new NotImplementedException("There is nothing to see there, oops look away...");
         }
     }
 }
