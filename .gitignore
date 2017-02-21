@@ -254,4 +254,6 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
-/Demo/Demo/Demo.Android/Resources/Resource.Designer.cs
+
+## Android Auto-generated files
+**/Resources/Resource.designer.cs
