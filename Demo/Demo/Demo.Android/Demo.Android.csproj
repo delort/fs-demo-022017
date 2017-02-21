@@ -65,7 +65,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Demo.AdvancedPCL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Demo.AdvancedPCL.1.0.0-beta1\lib\MonoAndroid403\Demo.AdvancedPCL.dll</HintPath>
+      <HintPath>..\..\packages\Demo.AdvancedPCL.1.0.1-beta1\lib\MonoAndroid403\Demo.AdvancedPCL.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Demo.Plugin.AlertDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
