@@ -257,3 +257,4 @@ paket-files/
 
 ## Android Auto-generated files
 **/Resources/Resource.designer.cs
+/Demo/Demo/Demo.Android/Demo.Android.csproj.bak
